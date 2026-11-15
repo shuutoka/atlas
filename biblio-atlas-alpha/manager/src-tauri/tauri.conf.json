@@ -1,0 +1,19 @@
+{
+  "productName": "Biblio-Atlas Manager",
+  "version": "1.0.0",
+  "identifier": "fr.biblio-atlas.manager",
+  "build": { "frontendDist": "../ui" },
+  "app": { "windows": [] },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "resources": {
+      "../atlas.py": "engine/atlas.py",
+      "../server.py": "engine/server.py",
+      "../schema.sql": "engine/schema.sql",
+      "../seed/": "engine/seed/",
+      "../ui/": "engine/ui/",
+      "../python/": "engine/python/"
+    }
+  }
+}

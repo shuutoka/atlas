@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #f4f3ee;
+  color: #243536;
+  font:
+    15px/1.48 system-ui,
+    sans-serif;
+}
+header {
+  height: 68px;
+  background: #183537;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+}
+header b {
+  font:
+    bold 24px Georgia,
+    serif;
+}
+small {
+  font: 12px system-ui;
+  letter-spacing: 0.06em;
+}
+nav,
+.filters,
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+button,
+select,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+button {
+  border: 1px solid #b9c7bc;
+  background: #fff;
+  border-radius: 5px;
+  padding: 7px 11px;
+  cursor: pointer;
+}
+button:hover,
+button:focus-visible {
+  background: #e1eee5;
+}
+header button {
+  color: #1f4543;
+}
+main {
+  display: grid;
+  grid-template-columns: minmax(300px, 30%) 1fr;
+  height: calc(100vh - 68px);
+}
+aside,
+article {
+  overflow: auto;
+  padding: 22px;
+}
+aside {
+  background: #fbfcf8;
+  border-right: 1px solid #d1d8cf;
+}
+h1,
+h2 {
+  font:
+    normal 30px Georgia,
+    serif;
+  margin: 0 0 18px;
+}
+h3,
+summary {
+  font-weight: 650;
+}
+input:not([type="checkbox"]),
+select,
+textarea {
+  border: 1px solid #bdc9c0;
+  background: #fff;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+}
+textarea {
+  min-height: 78px;
+}
+aside .filters {
+  margin-top: 9px;
+  justify-content: space-between;
+}
+.filters select {
+  width: auto;
+}
+article {
+  padding: 32px max(4%, 24px);
+}
+fieldset {
+  border: 1px solid #c9d0c8;
+  background: white;
+  border-radius: 7px;
+  padding: 15px;
+  margin: 16px 0;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+label {
+  display: block;
+}
+legend {
+  font-weight: bold;
+  padding: 0 5px;
+}
+summary {
+  cursor: pointer;
+  padding: 7px 0;
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border-bottom: 1px solid #e0e4db;
+}
+.row button {
+  padding: 7px 0;
+  flex: 1;
+  text-align: left;
+  border: 0;
+  background: transparent;
+}
+.row.on {
+  background: #d9eade;
+}
+.row small {
+  display: block;
+  color: #536963;
+}
+.actions {
+  position: sticky;
+  bottom: 0;
+  background: #f4f3ee;
+  padding: 10px 0;
+}
+.primary {
+  background: #245650;
+  color: white;
+}
+.primary:hover {
+  color: #133;
+}
+.danger {
+  color: #98422c;
+}
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 48vh;
+  overflow: auto;
+}
+dialog {
+  border: 1px solid #bccac2;
+  border-radius: 6px;
+  max-width: min(760px, 94vw);
+  min-width: min(420px, 90vw);
+  color: #243536;
+}
+dialog::backdrop {
+  background: #142b2c85;
+}
+#close {
+  float: right;
+}
+#notice:not(:empty) {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  background: #153d36;
+  color: white;
+  padding: 12px 18px;
+  max-width: 80vw;
+  border-radius: 6px;
+  white-space: pre-wrap;
+}
+#count {
+  color: #536963;
+  font-size: 13px;
+}
+.entry {
+  display: grid;
+  gap: 5px;
+  padding: 9px;
+  margin-bottom: 8px;
+  background: #f1f4ee;
+}
+.entry button {
+  justify-self: start;
+}

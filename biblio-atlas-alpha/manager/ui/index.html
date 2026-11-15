@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Biblio-Atlas Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <b>Biblio-Atlas <small>Manager</small></b>
+      <nav>
+        <button id="import">Importer des données</button
+        ><input
+          hidden
+          type="file"
+          accept=".kml,.geojson,.json,.csv"
+          id="file"
+        /><button id="reports">Rapports</button
+        ><button id="export">Exporter le site</button>
+      </nav>
+    </header>
+    <main>
+      <aside>
+        <h1>Volcans du monde</h1>
+        <input
+          id="search"
+          type="search"
+          placeholder="Rechercher un nom, un lieu, un ID…"
+        />
+        <div class="filters">
+          <select id="filter">
+            <option value="">Toutes les fiches</option>
+            <option>Publiées</option>
+            <option>Brouillons</option>
+            <option>À vérifier</option>
+            <option>À compléter</option>
+            <option>Sans nom</option></select
+          ><button id="new">＋ Créer</button>
+        </div>
+        <div class="filters">
+          <label><input id="all" type="checkbox" /> Tout sélectionner</label
+          ><button id="bulk">Édition en lot</button>
+        </div>
+        <p id="count"></p>
+        <div id="list"></div>
+      </aside>
+      <article id="editor">
+        <h2>Ouvrez une fiche</h2>
+        <p>
+          Choisissez un repère dans la collection ou créez un nouvel élément.
+        </p>
+      </article>
+    </main>
+    <dialog id="dialog">
+      <button id="close">Fermer</button>
+      <section id="dialogBody"></section>
+    </dialog>
+    <div role="status" id="notice"></div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

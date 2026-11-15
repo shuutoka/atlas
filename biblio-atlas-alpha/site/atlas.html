@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Volcans du monde · Biblio-Atlas</title>
+    <link rel="stylesheet" href="vendor/Cesium/Widgets/widgets.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="settings.js"></script>
+    <link rel="stylesheet" href="assets/render.css" />
+    <script src="assets/supercluster.min.js" defer></script>
+  </head>
+  <body class="atlasPage">
+    <header>
+      <a class="brand" href="./"><span class="seal">◎</span>Biblio-Atlas α</a
+      ><button id="alphaBadge" class="alphaBadge">ALPHA</button>
+      <nav><button id="propose">Proposer un volcan</button></nav>
+    </header>
+    <main class="atlasLayout">
+      <aside class="panel" id="panel">
+        <div class="pad">
+          <button class="close mobile" id="hideList">Fermer</button
+          ><a class="kicker link" href="./">Collection</a>
+          <h1 id="title">Volcans du monde</h1>
+          <input
+            id="q"
+            class="search"
+            type="search"
+            placeholder="Nom, région, type, tag…"
+            aria-label="Rechercher un repère"
+          />
+          <details class="filterBox">
+            <summary>Filtres</summary>
+            <div id="filters" class="filtergrid"></div>
+            <button id="reset">Réinitialiser</button>
+          </details>
+          <div id="total" aria-live="polite"></div>
+        </div>
+        <div id="results"></div>
+        <div class="panelBottom">
+          <details>
+            <summary>Légende des marqueurs</summary>
+            <div class="legend" id="legend"></div>
+            <div id="shapes" class="legend"></div>
+          </details>
+        </div>
+      </aside>
+      <div class="mapBox">
+        <div id="globe"></div>
+        <div class="float">
+          <button class="mobile" id="showList">Répertoire</button
+          ><button id="clusters" aria-pressed="true">Groupes · ON</button
+          ><button id="world">Vue mondiale</button
+          ><button id="showRender" aria-expanded="false">Rendu ⚙</button>
+        </div>
+        <div id="cameraTools" hidden aria-label="Navigation sur la carte">
+          <div class="headingTools">
+            <button id="turnLeft" aria-label="Tourner de 15° à gauche">‹</button
+            ><button
+              id="north"
+              title="Remettre le nord en haut"
+              aria-label="Remettre le nord en haut"
+            >
+              <span>N</span></button
+            ><button id="turnRight" aria-label="Tourner de 15° à droite">
+              ›
+            </button>
+          </div>
+          <div class="modeTools" id="sceneModes">
+            <button id="mode2D" aria-pressed="false">2D</button
+            ><button id="mode3D" aria-pressed="true">3D</button>
+          </div>
+          <label id="tiltLabel"
+            >Vue <span>2D</span
+            ><input
+              id="tilt"
+              type="range"
+              min="0"
+              max="1"
+              step="0.005"
+              aria-label="Inclinaison de la vue 3D"
+            /><span>3D</span></label
+          >
+        </div>
+        <section id="renderPanel" hidden aria-label="Réglages du rendu">
+          <div class="renderHead">
+            <h2>Rendu · Alpha</h2>
+            <button id="hideRender" aria-label="Fermer les réglages">×</button>
+          </div>
+          <label
+            >Moteur<select id="engineChoice">
+              <option value="cesium">CesiumJS — Stable / recommandé</option>
+              <option value="maplibre">MapLibre — Expérimental</option>
+              <option value="openglobus">OpenGlobus — Expérimental</option>
+            </select></label
+          ><label>Relief<select id="terrainChoice"></select></label
+          ><label>Imagerie<select id="imageChoice"></select></label
+          ><label
+            >Qualité<select id="qualityChoice">
+              <option value="auto">Automatique</option>
+              <option value="high">Haute</option>
+              <option value="perf">Performance</option>
+            </select></label
+          >
+          <small
+            >MapLibre et OpenGlobus sont expérimentaux. Le chargement du terrain
+            peut ralentir la navigation.</small
+          >
+          <p id="renderHint"></p>
+          <label
+            ><input id="techToggle" type="checkbox" /> Mesures techniques</label
+          >
+        </section>
+        <output id="techRead" hidden></output><small id="tileState"></small>
+        <div id="credits"></div>
+        <aside id="detail" hidden></aside>
+        <div id="mapState" role="status"></div>
+      </div>
+    </main>
+    <dialog id="modal">
+      <button class="close" id="dismiss">Fermer</button>
+      <div id="content"></div>
+    </dialog>
+    <script type="module" src="assets/atlas.js"></script>
+    <script type="module" src="assets/alpha.js"></script>
+  </body>
+</html>

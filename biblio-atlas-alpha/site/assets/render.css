@@ -1,0 +1,247 @@
+#globe > .engineMount {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+#renderPanel,
+#techRead {
+  position: absolute;
+  z-index: 3;
+  left: 12px;
+  background: #f7f5ee;
+  color: #183c3c;
+  border: 1px solid #c5cfc1;
+  border-radius: 6px;
+  box-shadow: 0 3px 14px #152f3433;
+  padding: 14px;
+}
+#renderPanel {
+  top: 60px;
+  width: min(292px, calc(100% - 24px));
+  max-height: calc(100% - 94px);
+  overflow: auto;
+}
+#renderPanel label {
+  display: block;
+  margin: 7px 0;
+}
+#renderPanel select {
+  display: block;
+  width: 100%;
+  margin-top: 2px;
+}
+.renderHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.renderHead h2 {
+  font: 26px Georgia;
+  margin: 0;
+}
+.renderHead button {
+  padding: 2px 9px;
+}
+#renderHint {
+  font-size: 12px;
+  margin: 6px 0;
+  color: #53675d;
+}
+#techRead {
+  bottom: 40px;
+  white-space: pre-line;
+  font:
+    12px/1.5 ui-monospace,
+    monospace;
+  pointer-events: none;
+  max-width: calc(100% - 24px);
+}
+#credits {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: #faf9f0e8;
+  font: 10px/1.3 system-ui;
+  padding: 2px 5px;
+  max-width: 80%;
+  text-align: right;
+}
+#credits a {
+  color: #294d47;
+}
+.reliefAction {
+  display: block;
+  margin: 8px 0;
+  background: #244f48;
+  color: white;
+}
+.mlPin,
+.mlPin:hover {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  line-height: 0;
+}
+.mlPin img {
+  display: block;
+}
+.og-inner {
+  width: 100%;
+  height: 100%;
+}
+.mapBox .float {
+  z-index: 2;
+}
+#detail {
+  z-index: 2;
+}
+.alphaPage #techRead {
+  pointer-events: none;
+}
+@media (max-width: 760px) {
+  #renderPanel {
+    top: 44px;
+    z-index: 5;
+  }
+  #techRead {
+    bottom: 28px;
+    z-index: 2;
+  }
+  #techRead:not([hidden]) ~ #detail:not([hidden]) {
+    max-height: 40%;
+  }
+}
+#detail .expandCard {
+  display: none;
+}
+#detail.compactCard {
+  top: auto;
+  bottom: 25px;
+  max-width: 270px;
+  padding: 9px 12px;
+}
+#detail.compactCard > * {
+  display: none;
+}
+#detail.compactCard h2 {
+  display: block;
+  font-size: 20px;
+  margin: 2px 0 6px;
+}
+#detail.compactCard .close,
+#detail.compactCard .expandCard {
+  display: inline-block;
+}
+#detail .reliefAction:hover {
+  background: #163e38;
+}
+.mlPin[style*="opacity: 0;"] {
+  pointer-events: none;
+}
+#tileState:not(:empty) {
+  position: absolute;
+  bottom: 19px;
+  left: 10px;
+  background: #f9f7eeeb;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #294943;
+  font: 11px/1.4 system-ui;
+}
+.atlasPage .brand {
+  white-space: nowrap;
+}
+@media (max-width: 440px) {
+  .atlasPage .brand {
+    font-size: 18px;
+  }
+  .atlasPage .seal {
+    font-size: 24px;
+  }
+  .atlasPage .alphaBadge {
+    padding: 3px 5px;
+    font-size: 9px;
+  }
+  .atlasPage nav button {
+    padding: 5px;
+    font-size: 11px;
+  }
+}
+#cameraTools:not([hidden]) {
+  position: absolute;
+  z-index: 2;
+  left: 12px;
+  bottom: 44px;
+  background: #f7f5eef2;
+  border: 1px solid #bac9bd;
+  color: #244f48;
+  padding: 5px 7px;
+  border-radius: 8px;
+  display: grid;
+  gap: 4px;
+  width: 154px;
+}
+.headingTools,
+.modeTools,
+#tiltLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+#cameraTools button {
+  padding: 2px 7px;
+  font-size: 13px;
+}
+#cameraTools #north {
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+}
+#north span {
+  display: inline-block;
+  font-weight: bold;
+  transform: rotate(var(--north, 0deg));
+}
+#north span::before {
+  content: "▲";
+  display: block;
+  font-size: 8px;
+  color: #a0322f;
+}
+.modeTools button {
+  flex: 1;
+}
+.modeTools button[aria-pressed="true"] {
+  background: #244f48;
+  color: white;
+}
+#tiltLabel {
+  font-size: 11px;
+}
+#tiltLabel input {
+  width: 63px;
+  accent-color: #244f48;
+}
+#tiltLabel[hidden] {
+  display: none;
+}
+#techRead {
+  bottom: 164px;
+  max-height: 36%;
+  overflow: auto;
+}
+@media (max-width: 760px) {
+  .mapBox:has(#detail:not([hidden])) #cameraTools {
+    bottom: auto;
+    top: 89px;
+  }
+  #techRead {
+    z-index: 3;
+  }
+}
+
+#sceneModes[hidden] {
+  display: none;
+}
